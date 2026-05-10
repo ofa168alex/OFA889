@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>OFA168 - A Trusted Gaming Platform</title>
+  <meta name="description"
+    content="Enjoy a wide variety of exciting gameplay options. Easy to get started and endless fun. Choose from multiple modes and enjoy a truly unique interactive experience.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OFA168 - A Trusted Gaming Platform">
+  <meta property="og:description"
+    content="Enjoy a wide variety of exciting gameplay options. Easy to get started and endless fun. Choose from multiple modes and enjoy a truly unique interactive experience.">
+  <meta property="og:url" content="https://fbads.wogm208.com/my01">
+  <meta property="og:image" content="https://fbads.wogm208.com/my01/og.jpg">
+
+  <style>
+    :root {
+      --gold1: #FFE8A8;
+      --gold2: #FFD24D;
+      --gold3: #D9A514;
+      --line: #06C755;
+      --text: #111827;
+      --muted: #6b7280;
+      --shadow: 0 14px 40px rgba(0, 0, 0, .15);
+      --radius: 18px;
+      --maxw: 1080px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI";
+      background: #fff;
+      color: var(--text)
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      height: 64px;
+      background: #fff;
+      border-bottom: 1px solid rgba(217, 165, 20, .18);
+      z-index: 50
+    }
+
+    .topbar-inner {
+      max-width: var(--maxw);
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .brand img {
+      height: 40px
+    }
+
+    .menuBtn {
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(217, 165, 20, .35);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer
+    }
+
+    .hamburger {
+      width: 18px;
+      height: 12px;
+      position: relative
+    }
+
+    .hamburger span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--gold3), var(--gold2))
+    }
+
+    .hamburger span:nth-child(1) {
+      top: 0
+    }
+
+    .hamburger span:nth-child(2) {
+      top: 5px
+    }
+
+    .hamburger span:nth-child(3) {
+      bottom: 0
+    }
+
+    .menuPanel {
+      position: fixed;
+      top: 64px;
+      right: 16px;
+      width: 220px;
+      background: #fff;
+      border: 1px solid rgba(217, 165, 20, .22);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 9999
+    }
+
+    .menuPanel a {
+      display: block;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 800
+    }
+
+    main {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 16px 120px
+    }
+
+    .carousel {
+      margin-top: 16px;
+      width: 100%;
+      aspect-ratio: 1280/853;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      z-index: 10;
+      transition: background 0.3s;
+      padding-bottom: 3px;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-btn.prev {
+      left: 12px;
+    }
+
+    .carousel-btn.next {
+      right: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        padding-bottom: 2px;
+      }
+    }
+
+    .slides {
+      display: flex;
+      height: 100%;
+      transition: .5s
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .slide a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* ensures whole image is visible without cropping and without weird stretches */
+      display: block;
+    }
+
+    .marquee {
+      margin-top: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(217, 165, 20, .22);
+      border-radius: 14px
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: 26px;
+      padding: 12px 16px;
+      white-space: nowrap;
+      animation: scroll 42s linear infinite
+    }
+
+    .mq-item {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(217, 165, 20, .55);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 210, 77, .08);
+    }
+
+    .mq-num {
+      color: var(--gold3);
+      font-weight: 900;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    .section {
+      margin-top: 28px
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px
+    }
+
+    .section-head span {
+      font-weight: 900;
+      color: #8a6b22
+    }
+
+    .section-head::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold2), transparent)
+    }
+
+    .section-box {
+      border: 1px solid rgba(217, 165, 20, .22);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow)
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px
+    }
+
+    @media(min-width:720px) {
+      .grid {
+        grid-template-columns: 1fr 1fr 1fr
+      }
+    }
+
+    .card {
+      display: flex;
+      gap: 14px;
+      align-items: center
+    }
+
+    .card-media {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      flex: 0 0 auto
+    }
+
+    .gameHero {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .gameMini {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
+    }
+
+    .gameLogo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain
+    }
+
+    .meta p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    .offers {
+      display: grid;
+      gap: 10px
+    }
+
+    @media(min-width:720px) {
+      .offers {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .offer {
+      border: 1px solid rgba(217, 165, 20, .18);
+      border-radius: 14px;
+      padding: 12px;
+      font-weight: 800
+    }
+
+    .bottombar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 78px;
+      background: #fff;
+      border-top: 1px solid rgba(217, 165, 20, .18);
+      z-index: 60
+    }
+
+    .bottombar-inner {
+      max-width: var(--maxw);
+      height: 100%;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .cta {
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 18px;
+      font-weight: 900;
+      letter-spacing: .5px;
+      text-decoration: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .12s ease, box-shadow .18s ease, filter .18s ease;
+    }
+
+    .cta.gold {
+      flex: 1;
+      color: #fff;
+      font-size: 22px;
+      position: relative;
+      background: linear-gradient(180deg, var(--gold1), var(--gold2), var(--gold3));
+      animation: breathe 1.8s ease-in-out infinite;
+      justify-content: center;
+    }
+
+    .cta.gold small {
+      position: static;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .9);
+      margin-left: 6px;
+    }
+
+    @keyframes breathe {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 rgba(255, 210, 77, 0)
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(255, 210, 77, .65)
+      }
+    }
+
+    .cta.spin-btn {
+      flex: 1;
+      color: #fff;
+      font-size: 18px;
+      position: relative;
+      background: linear-gradient(135deg, #0cebeb, #20e3b2, #29ffc6);
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite, floatBtn 2s ease-in-out infinite;
+      justify-content: center;
+      flex-direction: column;
+      line-height: 1.2;
+      box-shadow: 0 4px 15px rgba(32, 227, 178, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes floatBtn {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    body {
+      padding-bottom: 64px;
+    }
+
+
+    .site-footer {
+      width: 100%;
+      text-align: center;
+      font-size: 10px;
+      color: #d6d6d6;
+      padding: 6px 12px 10px;
+      background: #fff;
+      margin-bottom: 6px;
+      ;
+      margin-top: 4px
+    }
+
+
+    /* CTA label inline */
+    .bottom-bar .btn-primary,
+    .bottom-bar a.primary,
+    .bottom-bar button.primary,
+    .bottom-bar .primary-btn,
+    .bottom-bar a,
+    .bottom-bar button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .bottom-bar span {
+      display: inline;
+      line-height: 1;
+    }
+
+
+
+    /* tighten gap between offers and footer */
+    .offers-section {
+      padding-bottom: 6px;
+    }
+
+    .offers-section .section-box {
+      margin-bottom: 0;
+    }
+
+
+    .cta {
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 18px;
+      font-weight: 900;
+      letter-spacing: .5px;
+      text-decoration: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .12s ease, box-shadow .18s ease, filter .18s ease;
+    }
+
+
+
+    .cta:active {
+      transform: scale(.98)
+    }
+
+    /* ensure transparent areas show white, not black */
+    .carousel,
+    .slides,
+    .slide,
+    .hero,
+    .heroWrap {
+      background: #fff;
+    }
+
+    .slide img {
+      background: transparent;
+    }
+
+
+    /* CTA text: center main + right label */
+    .cta.gold {
+      position: relative;
+    }
+
+    .cta.gold .cta-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      font-weight: 900;
+    }
+
+    .cta.gold .cta-sub {
+      position: absolute;
+      right: 18px;
+      color: #8b6a2b;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+
+    /* CTA click feedback + clean text */
+    .cta {
+      cursor: pointer;
+    }
+
+    .cta:active {
+      transform: scale(.98);
+      filter: brightness(.98);
+    }
+
+    .cta.gold:active {
+      filter: brightness(.95);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .18);
+    }
+
+    .cta.spin-btn:active {
+      filter: brightness(.95);
+      transform: translateY(0) scale(.98);
+      box-shadow: 0 2px 8px rgba(32, 227, 178, 0.6);
+    }
+
+    .cta.gold .cta-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000000;
+      font-weight: 900;
+      text-shadow: none;
+    }
+
+    .cta.gold .cta-sub {
+      position: absolute;
+      right: 18px;
+      color: #8b6a2b;
+      font-size: 12px;
+      font-weight: 800;
+      text-shadow: none;
+    }
+
+    /* Floating Social Icons */
+    .floating-socials {
+      position: fixed;
+      right: 16px;
+      bottom: 96px;
+      /* Above bottom bar */
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    .social-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      color: #fff;
+    }
+
+    .social-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .social-btn.wa {
+      background: #25D366;
+      /* WhatsApp green */
+    }
+
+    .social-btn.tg {
+      background: #0088cc;
+      /* Telegram blue */
+    }
+
+    .social-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 480px) {
+      .bottombar {
+        height: 64px;
+      }
+
+      body {
+        padding-bottom: 50px;
+      }
+
+      .bottombar-inner {
+        padding: 6px 10px;
+        gap: 6px;
+      }
+
+      .cta {
+        height: 44px;
+        padding: 0 8px;
+        border-radius: 12px;
+      }
+
+      .cta.spin-btn .cta-title {
+        font-size: 13px !important;
+      }
+
+      .cta.spin-btn span:last-child {
+        font-size: 9px !important;
+      }
+
+      .cta.gold .cta-title {
+        font-size: 15px !important;
+        position: static;
+        transform: none;
+        white-space: nowrap;
+      }
+
+      .floating-socials {
+        bottom: 74px;
+        right: 12px;
+        gap: 10px;
+      }
+
+      .social-btn {
+        width: 46px;
+        height: 46px;
+      }
+
+      .social-btn svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .cta.spin-btn .cta-title {
+        font-size: 11px !important;
+        letter-spacing: 0;
+      }
+
+      .cta.gold .cta-title {
+        font-size: 13px !important;
+        letter-spacing: 0;
+      }
+    }
+  </style>
+  <link rel="preload" as="image" href="img/photo_6305261232235154639_y.jpg" fetchpriority="high">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><img src="img/logo.webp" alt="OFA168"></div>
+      <button class="menuBtn" id="menuBtn">
+        <div class="hamburger"><span></span><span></span><span></span></div>Menu
+      </button>
+    </div>
+  </header>
+
+  <div class="menuPanel" id="menuPanel">
+    <a href="https://seo002.ofa168my.asia/login?id=register" target="_blank">Sign Up Now</a>
+    <a href="https://wheel.ofa889.com/wheel.html" target="_blank">Play Wheel</a>
+    <a href="https://wa.link/dnpoaq" target="_blank">24H Live Support</a>
+    <a href="https://wa.link/dnpoaq" target="_blank">Claim Bonus CS</a>
+    <a href="https://t.me/ofa168vipmsia" target="_blank">VIP Channel</a>
+  </div>
+
+  <main>
+    <div class="carousel">
+      <div class="slides" id="slides">
+        <div class="slide">
+          <a href="https://wa.link/dnpoaq">
+            <img src="img/0dad0cd1-ddd6-4e8d-9301-f72ca5fee91d.jpg" width="1400" height="700" fetchpriority="high"
+              decoding="async" alt="Topup Get Spin">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://wa.link/dnpoaq">
+            <img src="img/ac0d51cc-50c4-45b4-b503-661de2c6abb4.jpg" width="1400" height="700" fetchpriority="high"
+              decoding="async" alt="Topup Get Spin">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://wa.link/dnpoaq">
+            <img src="img/photo_6141014553190405158_y.jpg" width="1400" height="700" fetchpriority="high"
+              decoding="async" alt="Topup Get Spin">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://wa.link/dnpoaq"
+          ">
+            <img src="img/3590f648-77ba-4091-932f-7e1e5e5f0d92.jpg" width="1400" height="700" fetchpriority="high"
+              decoding="async" alt="Topup Get Spin">
+          </a>
+        </div>
+        <!-- <div class="slide"><img src="img/banner1.webp" width="1400" height="631" loading="lazy" decoding="async">
+        </div>
+        <div class="slide"><img src="img/banner2.webp" width="1400" height="631" loading="lazy" decoding="async">
+        </div>
+        <div class="slide"><img src="img/banner3.webp" width="1400" height="631" loading="lazy" decoding="async">
+        </div> -->
+      </div>
+      <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+      <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+    </div>
+
+
+    <div class="marquee">
+      <div class="marquee-track" id="marquee">
+        <span class="mq-item">Congratulations ***0099 received a bonus ??span class="mq-num">120</span>??/span>
+        <span class="mq-item">Congratulations ***1022 received a bonus ??span class="mq-num">850</span>??/span>
+        <span class="mq-item">Congratulations ***2534 games winnings ??span class="mq-num">12,680</span>??/span>
+        <span class="mq-item">Congratulations ***4967 received a bonus ??span class="mq-num">200</span>??/span>
+        <span class="mq-item">Congratulations ***2984 games winnings ??span class="mq-num">21,430</span>??/span>
+        <span class="mq-item">Congratulations ***4398 games winnings ??span class="mq-num">68,975</span>??/span>
+        <span class="mq-item">Congratulations ***2091 received a bonus ??span class="mq-num">6,388</span>??/span>
+        <span class="mq-item">Congratulations ***4082 games winnings ??span class="mq-num">13,740</span>??/span>
+        <span class="mq-item">Congratulations ***0122 games winnings ??span class="mq-num">36,890</span>??/span>
+        <span class="mq-item">Congratulations ***7897 received a bonus ??span class="mq-num">688</span>??/span>
+      </div>
+    </div>
+
+
+
+    <section class="section">
+      <div class="section-head"><span>Popular Picks</span></div>
+      <div class="section-box">
+        <div class="grid">
+
+          <div class="card">
+            <img class="gameHero" src="img/card-live.webp" width="280" height="280" alt="?�人">
+            <div class="meta">
+              <p style="margin:0;color:var(--muted);line-height:1.5;"><img src="img/game-mt-live.webp"
+                  style="height:18px;max-height:18px;width:auto;display:block;margin:0 0 6px 0;"><strong
+                  style="font-weight:900;color:var(--text);">Live Games</strong>-Real-time interaction with full
+                immersion. Smooth gameplay and detailed visuals make you feel like you?�re right at the table.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="gameHero" src="img/card-elec.webp" width="280" height="280" alt="?��?">
+            <div class="meta">
+              <p style="margin:0;color:var(--muted);line-height:1.5;"><img src="img/game-mt-elec.webp"
+                  style="height:28px;max-height:28px;width:auto;display:block;margin:0 0 6px 0;"><strong
+                  style="font-weight:900;color:var(--text);">Spin Games</strong>-A wide variety of machines to choose
+                from. Smooth transitions, fast-paced wins, and an exciting, lag-free experience.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="gameHero" src="img/card-girl.webp" width="280" height="280" alt="美女?�播�?>
+            <div class="meta">
+              <p style="margin:0;color:var(--muted);line-height:1.5;"><img src="img/game-beauty.webp"
+                  style="height:40px;max-height:40px;width:auto;display:block;margin:0 0 6px 0;"><strong
+                  style="font-weight:900;color:var(--text);">Beauty Live Streaming</strong>-Real-time chat and
+                interaction in a fun, lively atmosphere. Relax, play, and chat with ease.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section offers-section">
+      <div class="section-head"><span>Promotions Zone</span></div>
+      <div class="section-box">
+        <div class="offers">
+          <div class="offer">Register and Get 20 Bonus Credits</div>
+          <div class="offer">Game Starter ??Get RM 60 First, RM 100 Next</div>
+          <div class="offer">Game Daily Redeposit ??RM 168 Bonus</div>
+          <div class="offer">Game and Live ??RM 6,388 Rescue Bonus</div>
+          <div class="offer">Live Games Welcome Bonus ??Up to RM 668</div>
+          <div class="offer">Sports Win Deposit Bonus up to 100%</div>
+          <div class="offer">Weekend Re-deposit ??RM 688 Bonus</div>
+          <div class="offer">Unlimited USDT Deposit Rewards</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottombar">
+    <div class="bottombar-inner">
+      <a class="cta spin-btn" href="https://wa.link/dnpoaq"
+      " target="_blank">
+        <span class="cta-title" style="font-size: 16px; margin-top: 2px;">GET FREE SPIN</span>
+        <span style="font-size: 11px; font-weight: normal; opacity: 0.9;">CONTACT US</span>
+      </a>
+      <a class="cta gold" href="https://seo002.ofa168my.asia/login?id=register" target="_blank"><span
+          class="cta-title">Sign Up
+          Now</span></a>
+    </div>
+  </nav>
+
+  <!-- Floating Social Icons -->
+  <div class="floating-socials">
+    <!-- Telegram -->
+    <a href="https://t.me/m/enuTSKiQZWZl" target="_blank" class="social-btn tg" title="Join Telegram Group">
+      <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.146-8.612-25.021 5.412-39.517 3.652-3.766 67.12-61.51 68.335-66.746 .153-.655 .3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283 .746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q .84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639 .474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769z" />
+      </svg>
+    </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.link/dnpoaq" target="_blank" class="social-btn wa" title="Contact WhatsApp">
+      <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('menuPanel');
+    btn.onclick = (e) => { e.stopPropagation(); panel.style.display = panel.style.display === 'block' ? 'none' : 'block' };
+    document.onclick = () => panel.style.display = 'none';
+
+    // Carousel logic
+    let currentSlide = 0;
+    const slidesBlock = document.getElementById('slides');
+    const totalSlidesCount = document.querySelectorAll('.slide').length;
+    let slideTimer;
+
+    function moveSlide(idx) {
+      if (idx >= totalSlidesCount) currentSlide = 0;
+      else if (idx < 0) currentSlide = totalSlidesCount - 1;
+      else currentSlide = idx;
+      slidesBlock.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function doNext() { moveSlide(currentSlide + 1); startTimer(); }
+    function doPrev() { moveSlide(currentSlide - 1); startTimer(); }
+
+    function startTimer() {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(() => { moveSlide(currentSlide + 1); }, 4500);
+    }
+
+    document.getElementById('nextBtn').onclick = doNext;
+    document.getElementById('prevBtn').onclick = doPrev;
+    startTimer();
+
+    const m = document.getElementById('marquee'); m.innerHTML += m.innerHTML;
+  </script>
+
+  <footer
